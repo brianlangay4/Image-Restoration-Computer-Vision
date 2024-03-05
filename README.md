@@ -3,7 +3,7 @@
 
 ![Screenshot 2024-03-04 214443](https://github.com/brianlangay4/Image-Restoration-Computer-Vision/assets/67788456/714097a0-01ab-43dc-86b0-d6cc68d96b97)
 
-**Eye processing **
+**Eye processing**
 To understand how the code detects and removes red eyes, let's break down the relevant parts:
 
 1. **Eye Detection**:
@@ -42,7 +42,7 @@ To understand how the code detects and removes red eyes, let's break down the re
    - Finally, the original image with detected red eyes and the processed image with red eyes removed are displayed for comparison.
 
 
-*Full code **
+*Full code*
 1. **Importing Libraries**:
    ```python
    import cv2
