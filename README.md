@@ -3,6 +3,10 @@
 
 ![Screenshot 2024-03-04 214443](https://github.com/brianlangay4/Image-Restoration-Computer-Vision/assets/67788456/714097a0-01ab-43dc-86b0-d6cc68d96b97)
 
+## OpenCV is a powerful library for computer vision tasks in Python. It includes tools for image processing, object detection, and more. One of its key features is the Haar cascade classifier, a machine learning-based algorithm used for object detection.
+
+# In the context of eye reduction, OpenCV's Haar cascade classifier is particularly useful. By training on a dataset of positive (eye-containing) and negative (eye-lacking) images, it learns to detect eyes in images. This pre-trained classifier can then be applied to new images to automatically locate eye regions. This functionality is leveraged in tasks like red-eye reduction, where the detected eye regions are processed to remove unwanted red-eye effects.
+
 **Eye processing**
 
  ```'''
