@@ -4,8 +4,10 @@
 ![Screenshot 2024-03-04 214443](https://github.com/brianlangay4/Image-Restoration-Computer-Vision/assets/67788456/714097a0-01ab-43dc-86b0-d6cc68d96b97)
 
 **Eye processing**
-To understand how the code detects and removes red eyes, let's break down the relevant parts:
 
+ ```'''
+To understand how the code detects and removes red eyes, let's break down the relevant parts:
+   ```
 1. **Eye Detection**:
    ```python
    eyes = eyesCascade.detectMultiScale(img, scaleFactor=1.3, minNeighbors=4, minSize=(100, 100))
