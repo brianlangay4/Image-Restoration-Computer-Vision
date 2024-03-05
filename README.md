@@ -3,7 +3,46 @@
 
 ![Screenshot 2024-03-04 214443](https://github.com/brianlangay4/Image-Restoration-Computer-Vision/assets/67788456/714097a0-01ab-43dc-86b0-d6cc68d96b97)
 
+**Eye processing **
+To understand how the code detects and removes red eyes, let's break down the relevant parts:
 
+1. **Eye Detection**:
+   ```python
+   eyes = eyesCascade.detectMultiScale(img, scaleFactor=1.3, minNeighbors=4, minSize=(100, 100))
+   ```
+   - This line utilizes the Haar cascade classifier (`eyesCascade`) to detect eyes in the input image (`img`). 
+   - The `detectMultiScale` function detects objects (in this case, eyes) of different sizes in the input image. It returns a list of rectangles where it believes it found eyes.
+
+2. **Processing Detected Eyes**:
+   ```python
+   for (x, y, w, h) in eyes:
+   ```
+   - This loop iterates over each detected eye, represented by its bounding box `(x, y, w, h)`.
+
+3. **Extracting Eye Region**:
+   ```python
+   eye = img[y:y+h, x:x+w]
+   ```
+   - This line extracts the region of interest (ROI) from the original image (`img`) corresponding to the detected eye. It crops the image based on the coordinates of the bounding box.
+
+4. **Red Eye Removal**:
+   - Once the eye region is extracted, the code performs the following steps to remove red-eye effect:
+     - **Extracting Channels**: It separates the eye image into its three color channels: blue (`b`), green (`g`), and red (`r`).
+     - **Calculating Background**: It calculates the sum of blue and green channels (`bg`), representing the background color without the red-eye effect.
+     - **Creating Mask**: It creates a binary mask (`mask`) to identify pixels that are significantly more red than the background. This is done by comparing the red channel (`r`) to a threshold (150) and ensuring that it's greater than both the background and green channels.
+     - **Cleaning Mask**: The mask is cleaned by filling holes and dilating to refine the red-eye regions.
+     - **Replacing Red Eye**: The mean color of the background (average of blue and green channels) is calculated and used to replace the red-eye region. This is achieved by applying the mean color where the mask is true, effectively removing the red-eye effect.
+
+5. **Displaying Results**:
+   ```python
+   cv2.imshow('Red Eyes', img)
+   cv2.imshow('Red Eyes Removed', imgOut)
+   cv2.waitKey(0)
+   ```
+   - Finally, the original image with detected red eyes and the processed image with red eyes removed are displayed for comparison.
+
+
+*Full code **
 1. **Importing Libraries**:
    ```python
    import cv2
