@@ -7,6 +7,22 @@
 
 ### In the context of eye reduction, OpenCV's Haar cascade classifier is particularly useful. By training on a dataset of positive (eye-containing) and negative (eye-lacking) images, it learns to detect eyes in images. This pre-trained classifier can then be applied to new images to automatically locate eye regions. This functionality is leveraged in tasks like red-eye reduction, where the detected eye regions are processed to remove unwanted red-eye effects.
 
+The `eyesCascade` variable in the our code refers to a Haar cascade classifier specifically trained for detecting eyes in images. 
+
+**Haar Cascade Classifiers:**
+Haar cascade classifiers are machine learning-based algorithms used for object detection. They work by using a series of feature templates (Haar features) to detect objects of interest. These features are simple rectangular areas where the pixel values are summed up and compared to a threshold. 
+
+**Eyes Cascade Classifier:**
+The eyes cascade classifier is trained specifically to detect eyes in images. It's pre-trained using a large dataset of positive samples (images containing eyes) and negative samples (images without eyes). During training, the classifier learns to distinguish between these two types of samples based on the patterns of Haar features present in the images.
+
+**How it Works:**
+When applied to an input image, the eyes cascade classifier scans the image at multiple scales and locations, searching for regions that match the learned patterns of eye features. It uses a sliding window approach, where a window of fixed size moves across the image, and at each position, the Haar features are computed and compared to the learned patterns. If a region matches the eye patterns above a certain threshold, it's considered a positive detection, and the bounding box coordinates of the detected eyes are returned.
+
+**Usage in the Code:**
+In the provided code, the `eyesCascade` variable is loaded with a pre-trained eyes cascade classifier XML file using `cv2.CascadeClassifier()`. This file contains the learned patterns necessary for eye detection. Later, the `detectMultiScale()` function of the `eyesCascade` object is called to perform eye detection on the input image (`img`). The function returns a list of rectangles representing the bounding boxes of the detected eyes in the image.
+
+Overall, the eyes cascade classifier plays a crucial role in automatically identifying eye regions within images, which is essential for subsequent processing tasks, such as red-eye removal, as demonstrated in the code.
+
 **Eye processing**
 
  ```'''
