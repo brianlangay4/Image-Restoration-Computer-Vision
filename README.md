@@ -1,6 +1,7 @@
 # Image-Restoration-Computer-Vision
  image processing techniques for  eye detection and red-eye removal, which are essential components of image restoration. The context provided by these snippets lays the groundwork for understanding how image restoration algorithms can be implemented and applied in real-world scenarios to enhance the quality of digital images.
 
+
 ![Screenshot 2024-03-04 214443](https://github.com/brianlangay4/Image-Restoration-Computer-Vision/assets/67788456/714097a0-01ab-43dc-86b0-d6cc68d96b97)
 
 # OpenCV is a powerful library for computer vision tasks in Python. It includes tools for image processing, object detection, and more. One of its key features is the Haar cascade classifier, a machine learning-based algorithm used for object detection.
@@ -155,3 +156,9 @@ To understand how the code detects and removes red eyes, let's break down the re
     cv2.waitKey(0)
     ```
     - Displays the original image with detected red eyes and the processed image with red eyes removed.
+   
+## Overall, your conclusion offers a clear and insightful summary of the image restoration process, making it easier for readers to understand the underlying concepts and code implementation. If you have any specific questions or need further clarification on any aspect of the conclusion, feel free to ask!
+
+### by Brian Barnabas Langay
+brianlangay0@gmail.com
+   
