@@ -157,7 +157,7 @@ To understand how the code detects and removes red eyes, let's break down the re
     ```
     - Displays the original image with detected red eyes and the processed image with red eyes removed.
    
-## Overall, your conclusion offers a clear and insightful summary of the image restoration process, making it easier for readers to understand the underlying concepts and code implementation. If you have any specific questions or need further clarification on any aspect of the conclusion, feel free to ask!
+
 
 ### by Brian Barnabas Langay
 brianlangay0@gmail.com
